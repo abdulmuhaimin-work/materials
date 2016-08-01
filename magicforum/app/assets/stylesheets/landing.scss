@@ -1,0 +1,28 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.background {
+        background-image: asset-url("shoe.jpg");
+        height: 100vh;
+        width: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        COLOR: #f1fafa;
+        align-items: center;
+        justify-content: center;
+      }
+
+.background2 {
+        background-image: asset-url("smartwatch.jpg");
+        height: 50vh;
+        width: 100%;
+        background-position: 10% 60%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        COLOR: #f1fafa;
+        align-items: 50% 80%;
+        justify-content: center;
+      }
