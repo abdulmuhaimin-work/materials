@@ -1,0 +1,40 @@
+.topic {
+
+.topic-title {
+  flex: 1 0 ;
+  padding: 10px;
+  flex-wrap: wrap;
+  h5{font-size: 150%};
+  margin: 20px 10px;
+  color: orange;
+  border-style: solid;
+  border-color: black;
+}
+.topic-container {
+  margin: 50px 0;
+}
+.topics-big {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 50px auto;
+  justify-content: center;
+  align-items: baseline;
+}
+.page-title{
+  flex: 1 0 300px;
+}
+.button {
+  font: bold 60px Arial;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 5px solid #CCCCCC;
+  border-right: 5px solid #333333;
+  border-bottom: 5px solid #333333;
+  border-left: 5px solid #CCCCCC;
+}
+
+
+
+}

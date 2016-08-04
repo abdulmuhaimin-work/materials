@@ -1,8 +1,11 @@
 
-@import "font-awesome";
+
+
+.landing {
+  @import "font-awesome";
 
 .background {
-        background-image: asset-url("shoe.jpg");
+        background-image: asset-url("macbook.jpg");
         height: calc(100vh - 52px);
         width: 100%;
         background-position: 50% 50%;
@@ -15,14 +18,14 @@
       }
 
 .background2 {
-        background-image: asset-url("smartwatch.jpg");
+        background-image: asset-url("vr.jpg");
         height: 50vh;
         width: 100%;
-        background-position: 10% 60%;
+        background-position: 10% 10%;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
-        COLOR: #f1fafa;
+        COLOR: black;
         align-items: 50% 80%;
         justify-content: center;
       }
@@ -48,6 +51,7 @@
     flex: 1 0 ;
     padding: 10px;
     flex-wrap: wrap;
+    h5{font-size: 150%};
     margin: 20px 10px;
     color: orange;
 
@@ -57,6 +61,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 1920px;
+  width: 100%;
   margin: 0 auto;
   justify-content: center;
   background-color: black;
@@ -64,7 +69,7 @@
 
 .column-1 {
   flex-wrap: wrap;
-  flex: 0 0 480px;
+  flex: 1 0;
   position: relative;
 }
 
@@ -124,3 +129,4 @@ h4 {
       max-width: 600px;
     }
   }
+}

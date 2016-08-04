@@ -1,0 +1,53 @@
+.about {
+  .background {
+          background-image: asset-url("vr.jpg");
+          height: calc(100vh - 52px);
+          width: 100%;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: flex;
+          COLOR: #f1fafa;
+          justify-content: center;
+  }
+  .content-2 {
+        flex: 1 0 ;
+        padding: 10px;
+        flex-wrap: wrap;
+        margin: 0 20% 0 5%;
+        color: black;
+  }
+  .about-me-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      justify-content: center;
+  }
+  .about-me {
+      text-align: center;
+      font-size: 200%;
+      margin: 40px 100px;
+  }
+  .about-me-content {
+      flex: 1 0;
+      padding: 10px;
+      flex-wrap: wrap;
+      margin: 20px 10px;
+      color: orange;
+  }
+  .about-me-title {
+    color: orange;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .column-1 {
+    flex: 0 0 480px;
+    position: relative;
+  }
+  .img-resize {
+    width:25%;
+    height: 40%;
+    border-radius: 50%;
+  }
+
+}
