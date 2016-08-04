@@ -1,5 +1,7 @@
-.topic {
-  .topic-title {
+.post {
+  background-color: green;
+
+  .post-title {
     flex: 1 0 ;
     padding: 10px;
     flex-wrap: wrap;
@@ -9,10 +11,10 @@
     border-style: solid;
     border-color: black;
   }
-  .topic-container {
+  .post-container {
     margin: 50px 0;
   }
-  .topics-big {
+  .posts-big {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;

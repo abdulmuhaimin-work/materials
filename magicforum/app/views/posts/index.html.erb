@@ -1,0 +1,17 @@
+<div class="post">
+  <h1 class="page-title text-center">Posts</h1>
+
+  <section class="posts-big">
+
+    <% @posts.each do |post| %>
+      <div class="post-title text-center">
+        <h3><%= post.title %></h3>
+        <h5><%= post.body %></h5>
+        <%= link_to post.title, post_path(post) %>
+      </div>
+    <% end %>
+  </section>
+
+
+<%= button_to "Create new post", new_post_path, class: "button", :method => :get %>
+</div>

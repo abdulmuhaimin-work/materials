@@ -2,4 +2,6 @@
 <h1><%= @topic.title %></h1>
 <p><%= @topic.description %></p>
 
-<%= link_to "Delete", topic_path(@topic), method: :delete %>
+<%= button_to "edit topic", edit_topic_path, method: :get %>
+
+<%= button_to "Delete", topic_path(@topic), method: :delete %>
