@@ -1,5 +1,5 @@
 <div class="topic">
-  <h1 class="page-title text-center"> Topics </h1>
+  <h1 class="text-center"> Topics </h1>
 
   <section class="topics-big">
 
@@ -8,11 +8,12 @@
       <div class="topic-title text-center">
         <h3><%= topic.title %></h3>
         <h5><%= topic.description %></h5>
-        <%= link_to topic.title, topic_path(topic) %>
+        <%= link_to topic.title, topic_posts_path(topic) %>
       </div>
     <% end %>
 
   </section>
-
-  <%= button_to "new", new_topic_path, :class => "button", :method => :get %>
+  <section class="topics-big">
+    <%= button_to "new", new_topic_path, :method => :get %>
+  </section>
 </div>

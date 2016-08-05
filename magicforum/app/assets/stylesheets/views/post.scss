@@ -2,8 +2,9 @@
   background-color: green;
 
   .post-title {
-    flex: 1 0 ;
+    max: 200px;
     padding: 10px;
+
     flex-wrap: wrap;
     h5{font-size: 150%};
     margin: 20px 10px;
@@ -11,19 +12,14 @@
     border-style: solid;
     border-color: black;
   }
-  .post-container {
-    margin: 50px 0;
-  }
-  .posts-big {
+
+  .posts-container {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 50px 20% 0 20%;
     justify-content: center;
-    align-items: baseline;
-  }
-  .page-title{
-    flex: 1 0 300px;
+    align-items: center;;
   }
 
 }

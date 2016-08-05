@@ -1,17 +1,21 @@
 <div class="post">
-  <h1 class="page-title text-center">Posts</h1>
+  <h1 class="text-center"><%= @topic.title %></h>
+  <h1 class="text-center">Posts</h1>
 
-  <section class="posts-big">
+  <section class="posts-container">
 
     <% @posts.each do |post| %>
       <div class="post-title text-center">
         <h3><%= post.title %></h3>
         <h5><%= post.body %></h5>
-        <%= link_to post.title, post_path(post) %>
+
       </div>
     <% end %>
+
   </section>
-
-
-<%= button_to "Create new post", new_post_path, class: "button", :method => :get %>
+  <section class="text-center">
+    <%= button_to "Create new post", new_topic_post_path, :method => :get %>
+    <%= button_to "Edit Topic", edit_topic_path(@topic), :method => :get %>
+    <%= button_to "Delete Topic", topic_path(@topic), method: :delete, data: { confirm: "Delete? The posts will also be deleted." } %>
+  </section>
 </div>
