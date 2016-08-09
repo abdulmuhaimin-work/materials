@@ -1,0 +1,19 @@
+<div class="comment">
+  <h1 class="text-center"><%= @post.title %></h>
+  <h1 class="text-center">comments</h1>
+
+  <section class="comments-container">
+
+    <% @comments.each do |comment| %>
+      <div class="comment-title text-center">
+        <h5><%= comment.body %></h5>
+      </div>
+    <% end %>
+
+  </section>
+
+  <section class="text-center">
+    <%= button_to "create new comment", new_topic_post_comment_path, :method => :get %>
+  </section>
+
+</div>

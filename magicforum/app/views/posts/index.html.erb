@@ -1,6 +1,12 @@
 <div class="post">
   <h1 class="text-center"><%= @topic.title %></h>
+    <div id="preview-image">
+      <% if @post.image? %>
+        <%= image_tag post.image, class: "img-settings img-responsive center-block" %>
+      <% end %>
+    </div>
   <h1 class="text-center">Posts</h1>
+
 
   <section class="posts-container">
 
@@ -8,14 +14,13 @@
       <div class="post-title text-center">
         <h3><%= post.title %></h3>
         <h5><%= post.body %></h5>
-
+        <%= link_to post.title, topic_post_comments_path(@topic, post)%>
+        <%= button_to "edit post", edit_topic_post_path(@topic, post), :method => :get %>
       </div>
     <% end %>
 
   </section>
   <section class="text-center">
     <%= button_to "Create new post", new_topic_post_path, :method => :get %>
-    <%= button_to "Edit Topic", edit_topic_path(@topic), :method => :get %>
-    <%= button_to "Delete Topic", topic_path(@topic), method: :delete, data: { confirm: "Delete? The posts will also be deleted." } %>
   </section>
 </div>

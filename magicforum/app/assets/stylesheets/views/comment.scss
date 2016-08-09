@@ -1,0 +1,25 @@
+.comment {
+  background-color: green;
+
+  .comment-title {
+    max: 200px;
+    padding: 10px;
+
+    flex-wrap: wrap;
+    h5{font-size: 150%};
+    margin: 20px 10px;
+    color: orange;
+    border-style: solid;
+    border-color: black;
+  }
+
+  .comments-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px 20% 0 20%;
+    justify-content: center;
+    align-items: center;;
+  }
+
+}

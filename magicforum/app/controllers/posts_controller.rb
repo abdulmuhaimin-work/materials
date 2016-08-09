@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @topic = Topic.includes(:posts).find_by(id: params[:topic_id])
-    @posts = @topic.posts.order("created_at DESC")
+    @posts = @topic.posts
   end
 
   def new
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to topic_posts_path(@topic)
     else
-      redirect_to new_topic_post_path(@topic)
+      render new_topic_post_path(@topic)
     end
   end
 
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to topic_posts_path(@topic)
     else
-      redirect_to edit_topic_post_path(@topic, @post)
+      redirect_to edit_topic_post_path(@topic, post)
     end
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image)
   end
 
 end
