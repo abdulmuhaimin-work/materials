@@ -8,6 +8,7 @@
       <div class="comment-title text-center">
         <h5><%= comment.body %></h5>
       </div>
+      <%= button_to "edit comment", edit_topic_post_comment_path(@topic, @post, comment), :method => :get %>
     <% end %>
 
   </section>

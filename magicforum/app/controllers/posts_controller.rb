@@ -15,9 +15,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params.merge(topic_id: params[:topic_id]))
 
     if @post.save
+      flash[:success] = "You've created a new post"
       redirect_to topic_posts_path(@topic)
     else
-      render new_topic_post_path(@topic)
+      flash[:danger] = @post.errors.full_messages
+      redirect_to new_topic_post_path(@topic)
     end
   end
 
@@ -31,9 +33,11 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
 
     if @post.update(post_params)
+      flash[:success] = "You've updated post"
       redirect_to topic_posts_path(@topic)
     else
-      redirect_to edit_topic_post_path(@topic, post)
+      flash[:danger] = @post.errors.full_messages
+      redirect_to edit_topic_post_path(@topic, @post)
     end
   end
 
