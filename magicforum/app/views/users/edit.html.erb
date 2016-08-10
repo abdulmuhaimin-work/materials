@@ -1,16 +1,21 @@
-<%= form_for(@user url: user_path(@user), html: { id: "topic-update-form" }) do |f| %>
+<%= form_for(@user, url: user_path(@user), html: { id: "user-update-form" }) do |f| %>
   <h1 class="text-center">
     Update User
   </h1>
 
   <div class="form-group">
-    <h4> <%= f.label :title_field, "Title" %> </h4>
-    <%= f.text_field :title, required: true, id: "topic_title_field", class: 'form-control' %>
+      <h4 class="text-center"> User Image </h4>
+      <div id="preview-image">
+        <% if @user.image? %>
+          <%= image_tag @user.image, class: "img-settings img-responsive center-block" %>
+        <% end %>
+        <%= f.file_field :image, id: "user_image_field", class: 'form-control image-uploader' %>
+      </div>
   </div>
 
   <div class="form-group">
-    <h4> <%= f.label :text_field, "Description" %> </h4>
-    <%= f.text_field :description, id: "topic_description_field", class: 'form-control' %>
+    <h4> <%= f.label :password_field, "Password" %> </h4>
+    <%= f.text_field :password, required: true, id: "password_digest_field", class: 'form-control' %>
   </div>
 
   <div class="form-group text-center">
