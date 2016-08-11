@@ -34,7 +34,8 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find_by(id: params[:id])
     @post = @comment.post
-    
+    @topic = @post.topic
+
     if @comment.update(comment_params)
       flash[:success] = "You've updated ur commment"
       redirect_to topic_post_comments_path(@post)
