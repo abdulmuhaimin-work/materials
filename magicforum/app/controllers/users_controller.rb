@@ -17,9 +17,19 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find_by(id: params[:id])
   end
 
   def update
+    @user = User.find_by(id: params[:id])
+
+    if @user.update(user_params)
+      flash[:succes] = "You've succesfully edit user"
+      redirect_to root_path
+    else
+      flash[:danger] = "update failed"
+      redirect_to root_path
+    end
   end
 
   private
