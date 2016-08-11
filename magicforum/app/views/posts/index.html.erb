@@ -13,6 +13,7 @@
         <%= image_tag post.image, class: "img-settings img-responsive center-block" %>
         <%= link_to post.title, topic_post_comments_path(@topic, post)%>
         <%= button_to "edit post", edit_topic_post_path(@topic, post), :method => :get %>
+        <%= button_to "Delete Post", topic_post_path(@topic, post), method: :delete, data: { confirm: "Confirm Delete?" } %>
       </div>
     <% end %>
 
