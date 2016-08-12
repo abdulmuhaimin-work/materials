@@ -2,16 +2,14 @@
   <h1 class="text-center"><%= @post.title %></h>
   <h1 class="text-center">comments</h1>
 
-  <div id="comments">
-    <% @comments.each do |comment| %>
-      <%= render partial: "comment", locals: { comment: comment, post: @post } %>
-    <% end %>
-  </div>
-  <div id="comments-form-container">
-    <%= render partial: "form", locals: { comment: @comment, post: @post } %>
-  </div>
-
-
-
-
+  <section>
+    <div id="comments">
+      <% @comments.each do |comment| %>
+        <%= render partial: "comment", locals: { comment: comment, post: @post } %>
+      <% end %>
+    </div>
+    <div id="comments-form-container">
+      <%= render partial: "form", locals: { comment: @comment, post: @post } %>
+    </div>
+  </section>
 </div>

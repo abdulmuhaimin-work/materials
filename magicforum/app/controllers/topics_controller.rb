@@ -1,24 +1,22 @@
 class TopicsController < ApplicationController
-  before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
+
+  respond_to :js
+  before_action :authenticate!, except: [:index]
 
   def index
-    @topics = Topic.all.order(created_at: :desc)
-  end
-
-  def new
+    @topics = Topic.all
     @topic = Topic.new
-    authorize @topic
   end
 
   def create
+    @new_topic = Topic.new
     @topic = current_user.topics.build(topic_params)
+    authorize @topic
 
     if @topic.save
-      flash[:success] = "You've created a new topic."
-      redirect_to topics_path
+      flash.now[:success] = "You've created a new topic."
     else
-      flash[:danger] = @topic.errors.full_messages
-      render new_topic_path
+      flash.now[:danger] = @topic.errors.full_messages
     end
   end
 

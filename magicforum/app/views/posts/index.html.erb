@@ -1,24 +1,15 @@
 <div class="post">
   <h1 class="text-center"><%= @topic.title %></h>
-
   <h1 class="text-center">Posts</h1>
 
-
-  <section class="posts-container">
-
-    <% @posts.each do |post| %>
-      <div class="post-title text-center">
-        <h3><%= post.title %></h3>
-        <h5><%= post.body %></h5>
-        <%= image_tag post.image, class: "img-settings img-responsive center-block" %>
-        <%= link_to post.title, topic_post_comments_path(@topic, post)%>
-        <%= button_to "edit post", edit_topic_post_path(@topic, post), :method => :get %>
-        <%= button_to "Delete Post", topic_post_path(@topic, post), method: :delete, data: { confirm: "Confirm Delete?" } %>
-      </div>
-    <% end %>
-
+  <section>
+    <div id="posts-container">
+      <% @posts.each do |post| %>
+        <%= render partial: "post", locals: { post: post, topic: @topic } %>
+      <% end %>
+    </div>
   </section>
-  <section class="text-center">
-    <%= button_to "Create new post", new_topic_post_path, :method => :get %>
-  </section>
+  <div id="posts-form-container">
+      <%= render partial: "form", locals: { post: @post, topic: @topic } %>
+  </div>
 </div>

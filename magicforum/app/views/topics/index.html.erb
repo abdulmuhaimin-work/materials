@@ -1,21 +1,14 @@
 <div class="topic">
   <h1 class="text-center"> Topics </h1>
 
-  <section class="topics-big">
-
-
-    <% @topics.each do |topic| %>
-      <div class="topic-title text-center">
-        <h3><%= topic.title %></h3>
-        <h5><%= topic.description %></h5>
-        <%= link_to topic.title, topic_posts_path(topic) %>
-        <%= button_to "Edit Topic", edit_topic_path(topic), :method => :get %>
-        <%= button_to "Delete Topic", topic_path(topic), method: :delete, data: { confirm: "Delete? The posts will also be deleted." } %>  
-      </div>
-    <% end %>
-
+  <section>
+    <div id="topics-big">
+      <% @topics.each do |topic| %>
+          <%= render partial: "topic", locals: {topic: topic } %>
+      <% end %>
+    </div>
   </section>
-  <section class="topics-big">
-    <%= button_to "new", new_topic_path, :method => :get %>
-  </section>
+  <div id="topic-form-container">
+      <%= render partial: "form", locals: { topic: @topic } %>
+  </div>
 </div>

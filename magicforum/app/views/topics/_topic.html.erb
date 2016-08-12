@@ -1,0 +1,7 @@
+<div class="topic-title text-center">
+  <h3><%= topic.title %></h3>
+  <h5><%= topic.description %></h5>
+  <%= link_to topic.title, topic_posts_path(topic) %>
+  <%= button_to "Edit Topic", edit_topic_path(topic), :method => :get %>
+  <%= button_to "Delete Topic", topic_path(topic), method: :delete, data: { confirm: "Delete?" } %>
+</div>

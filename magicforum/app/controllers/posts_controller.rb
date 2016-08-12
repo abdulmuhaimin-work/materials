@@ -1,28 +1,24 @@
 class PostsController < ApplicationController
 
+  respond_to :js
+  before_action :authenticate!, except: [:index]
+
   def index
     @topic = Topic.includes(:posts).find_by(id: params[:topic_id])
     @posts = @topic.posts
-
-  end
-
-  def new
-    @topic = Topic.find_by(id: params[:topic_id])
     @post = Post.new
-    authorize @post
-
   end
 
   def create
+    @new_post = Post.new
     @topic = Topic.find_by(id: params[:topic_id])
     @post = current_user.posts.build(post_params.merge(topic_id: params[:topic_id]))
+    authorize @post
 
     if @post.save
-      flash[:success] = "You've created a new post"
-      redirect_to topic_posts_path(@topic)
+      flash.now[:success] = "You've created a new post"
     else
-      flash[:danger] = @post.errors.full_messages
-      redirect_to new_topic_post_path(@topic)
+      flash.now[:danger] = @post.errors.full_messages
     end
   end
 
