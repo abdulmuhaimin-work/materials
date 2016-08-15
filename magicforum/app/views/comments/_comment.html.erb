@@ -1,8 +1,8 @@
-<div class="comment-title text-center">
-  <h5><%= comment.body %></h5>
-  <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
-</div>
-<div class="text-center">
-  <%= button_to "edit comment", edit_topic_post_comment_path(@topic, @post, comment), :method => :get %>
-  <%= button_to "Delete comment", topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Confirm Delete?" } %>
+<div id="comment_<% comment.id %>"
+  <div class="comment-title text-center">
+    <h5><%= comment.body %></h5>
+    <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
+    <%= link_to "edit comment", edit_topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true %>
+    <%= link_to "Delete comment", topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true, method: :delete, data: { confirm: "Confirm Delete?" } %>
+  </div>
 </div>

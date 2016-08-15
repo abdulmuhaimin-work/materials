@@ -36,8 +36,7 @@ class CommentsController < ApplicationController
     @topic = @post.topic
 
     if @comment.update(comment_params)
-      flash[:success] = "You've updated ur commment"
-      redirect_to topic_post_comments_path(@topic, @post)
+      flash.now[:success] = "You've updated ur commment"
     else
       redirect_to edit_topic_post_comment_path(@post, @comment)
     end
@@ -49,7 +48,7 @@ class CommentsController < ApplicationController
     @topic = @post.topic
 
     if @comment.destroy
-      redirect_to topic_post_comments_path(@topic, @post)
+      flash.now[:success] = "You've deleted ur commment"
     end
   end
 
