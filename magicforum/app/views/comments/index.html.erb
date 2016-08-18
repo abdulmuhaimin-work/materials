@@ -3,7 +3,7 @@
   <h1 class="text-center">This is all the comments in the <%= @post.title %> post </h1>
     <div id="comments">
       <% @comments.each do |comment| %>
-        <%= render partial: "comment", locals: { comment: comment, post: comment.post, current_user: comment.user } %>
+        <%= render partial: "comment", locals: { comment: comment, post: comment.post, username: comment.user.username} %>
       <% end %>
     </div>
 
