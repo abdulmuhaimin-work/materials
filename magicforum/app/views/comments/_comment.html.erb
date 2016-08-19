@@ -5,4 +5,16 @@
     <%= link_to "edit comment", edit_topic_post_comment_path(comment.post.topic, comment.post, comment, username: comment.user.username), remote: true %>
     <%= link_to "Delete comment", topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true, method: :delete, data: { confirm: "Confirm Delete?" } %>
   </div>
+  <div class="voting-panel">
+    <span>Score:</span>
+    <span class="voting-score"><%= comment.total_votes %></span>
+
+    <% if current_user %>
+      <div class="voting-controls">
+        <%= link_to "Upvote", upvote_path({ comment_id: comment.id }), method: :post, remote: true %>
+        <span> / </span>
+        <%= link_to "Downvote", downvote_path({ comment_id: comment.id }), method: :post, remote: true %>
+      </div>
+    <% end %>
+  </div>
 </div>

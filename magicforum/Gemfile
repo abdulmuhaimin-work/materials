@@ -35,6 +35,7 @@ gem 'pundit'
 gem 'responders'
 gem 'kaminari'
 gem 'redis'
+gem 'friendly_id'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
