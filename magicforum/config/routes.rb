@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
   root to: 'landing#landing'
   get :about, to: 'static_pages#about'
   resources :topics do
